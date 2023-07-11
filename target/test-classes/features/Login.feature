@@ -1,4 +1,8 @@
 #Author: Rajivjena
+#Change the User name and passwword and make sure the account doenot have 2factory authentication 
+#enabled in it due to privacy reasons i have replaced it after testing from my end 
+
+
 @LoginFeature
 Feature: Login Feature of the AmazonPrime
 
@@ -18,5 +22,5 @@ Feature: Login Feature of the AmazonPrime
 
     Examples: 
       | UserName             | Password    | movie                    |
-      | Rajivjena4@gmail.com | Rajivjena4@ | The Diana Investigations |
+      | Demouser@gmail.com | Demouserone | The Diana Investigations |
 	
