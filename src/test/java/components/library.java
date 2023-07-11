@@ -12,10 +12,12 @@ import java.time.Duration;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -44,6 +46,21 @@ public class library extends Driver{
 	
 	public static void WaitUntilElementvisible(String element,int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+		
+		try {
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(element)));
+			
+		}
+		catch (InvalidSelectorException e) {
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.partialLinkText(element)));
+		}
+		
+	}
+	
+	
+	public static void WaitUntilElementinteractable(String element ,int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(element)));
 	}
 
 	public static void validate_page_header() {
@@ -94,7 +111,7 @@ public class library extends Driver{
 	}
 	
 	public static void validat_element(String element) {
-		WebElement elements = driver.findElement(By.xpath("seekbtn"));
+		WebElement elements = driver.findElement(By.xpath(element));
 		if(element!= null) {
 			Assert.assertTrue(true);
 		}

@@ -37,7 +37,7 @@ public class login extends library{
 		
 		WaitUntilElementvisible(Uimapper.readPropertyFile("movie_diana"), 10);
 		clickElement_partiallinktext(Uimapper.readPropertyFile("movie_diana"));
-		WaitUntilElementvisible(Uimapper.readPropertyFile("movie_diana"), 10);
+		WaitUntilElementvisible(Uimapper.readPropertyFile("ep1_diana"), 10);
 		clickElement_partiallinktext(Uimapper.readPropertyFile("ep1_diana"));
 		
 //		WaitUntilElementvisible("closebtn", 10);
@@ -56,7 +56,7 @@ public class login extends library{
 	public void signout(String dropdown ,String signout) {
 		WaitUntilElementvisible(dropdown, 20);
 		clickElement_Actions(dropdown);
-		WaitUntilElementvisible(signout, 10);
+		WaitUntilElementinteractable(signout, 10);
 		clickElement_Actions(signout);
 	}
 	
@@ -67,7 +67,7 @@ public class login extends library{
 	}
 	
 	public void validate_playing_of_movie(String element) {
-		
+		validat_element(element);
 	}
 	
 	

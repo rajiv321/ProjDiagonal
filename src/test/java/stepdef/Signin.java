@@ -155,7 +155,7 @@ public void the_user_enters_and_and_click_on_the_login_button(String string, Str
 }
 @Then("The User should be redirected to the amazon prime home page")
 public void the_user_should_be_redirected_to_the_amazon_prime_home_page() {
-   
+  
 }
 @Then("The user searched the {string} in the search box")
 public void the_user_searched_the_in_the_search_box(String string) {
@@ -170,7 +170,7 @@ public void the_user_clicks_on_the_movie() {
 @Then("The user validated that the movie is been played")
 public void the_user_validated_that_the_movie_is_been_played() {
     
-	login.validate_playing_of_movie(Uimapper.readPropertyFile(""));
+	login.validate_playing_of_movie(Uimapper.readPropertyFile("seekbtn"));
 }
 
 
