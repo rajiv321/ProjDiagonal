@@ -20,5 +20,5 @@ Feature: Login Feature of the AmazonPrime
 
     Examples: 
       | UserName            | Password    | movie                    |
-      | Rajivjena4@gmail.com | Rajivjena4@| The Diana Investigations |
+      | demo@demo.com | demo@demo| The Diana Investigations |
 	
