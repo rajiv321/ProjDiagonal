@@ -1,16 +1,23 @@
 package functions;
 
+import java.util.ArrayList;
+
 import components.library;
 import resource.Uimapper;
 
 public class login extends library{
 
 	public void signinbtn_click() {
+		
+		
 		WaitUntilElementvisible(Uimapper.readPropertyFile("signinlabel"),10);
 		mouseactionMoveto(Uimapper.readPropertyFile("signinlabel"));
-		WaitUntilElementvisible(Uimapper.readPropertyFile("signinbtn"),10);
+//		WaitUntilElementvisible(Uimapper.readPropertyFile("signinbtn"),10);
+		WaitUntilElementinteractable(Uimapper.readPropertyFile("signinbtn"),10);
 		clickElement(Uimapper.readPropertyFile("signinbtn"));
 		validate_page_header();
+		
+		
 	}
 	
 	public void enter_emailandpassword(String data, String password) {

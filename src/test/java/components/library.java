@@ -5,15 +5,20 @@ package components;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import io.cucumber.core.logging.Logger;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -32,9 +37,18 @@ public class library extends Driver{
 //		driver=Driver.driver;
 //	}
 
-	
+	public static void demo () {
+		TakesScreenshot src = (TakesScreenshot)driver;
+		File file = src.getScreenshotAs(OutputType.FILE);
+		 try {
+			 FileUtils.copyFile(file, new File(""));
+		 }catch (Exception e ){
+			 
+		 }
+	}
 	
 	public static void clickElement(String element){
+		
 		driver.findElement(By.xpath(element)).click();;
 	}
 	
